@@ -2,34 +2,52 @@ package model;
 
 public class Customer {
     private String name;
-    private String lockernum;
+    private Integer lockernum;
+    private double acctcredit;
+    private Integer phonenum;
 
+    public Customer(String name) {
+        this.name = name;
+        this.lockernum = null;
+        this.acctcredit = 100.00;
+        this.phonenum = 00000;
+    }
 
-    public Customer(String givenname){
-        this.name = givenname;
+    public void setLockerNum(Integer num) {
+        this.lockernum = num;
+    }
+
+    public void setPhoneNum(Integer phonenum){
+        this.phonenum = phonenum;
+    }
+
+    public void clearLockerNum() {
         this.lockernum = null;
     }
 
-    public void setLockerNum(String assigned){
-        this.lockernum = assigned;
-    }
-
-    public void clearLockerNum(){
-        this.lockernum = null;
-    }
-
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
-    public String getLockerNumOfCustomer(){
-        if (this.lockernum == null){
+    public Integer getLockerNumOfCustomer() {
+        if (this.lockernum == null) {
             return null;
-        }
-        else {
-            return this.name;
+        } else {
+            return this.lockernum;
         }
     }
+
+    public Integer getPhoneNum(){
+        if (this.phonenum == null){
+            return 00000;
+        }
+        return this.phonenum;
+    }
+
+    public void addCredit(double c) {
+        this.acctcredit += c;
+    }
+
 
 
 
